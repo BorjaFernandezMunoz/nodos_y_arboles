@@ -1,6 +1,6 @@
-class Nodo (self, valor):
+class Nodo:
 
-    def __init__(self):
+    def __init__(self, valor):
 
         self.valor = valor
 
@@ -14,18 +14,18 @@ class Nodo (self, valor):
         return f'{self.hijo_izq}<{self.valor}>{self.hijo_dch}'
 
 
-class Arbol_binario (self):
+class Arbol_binario:
 
-    def __init__(self):
+    def __init__(self,nodo):
 
-        self.raiz = None
+        self.raiz = nodo
         self.lista_arbol_binario = []
         self.hijos_menores = []
         self.hijos_mayores = []
 
-    def buscar(self, ):
+    def buscar(self):
 
-        for i in lista_arbol_binario:
+        for i in self.lista_arbol_binario:
 
             if i >= self.valor:
 
@@ -39,40 +39,38 @@ class Arbol_binario (self):
             elif i == self.valor:
                 return f'Nodo encontrado: {self.hijo_izqu}<{self.valor}<{self.hijo_dch}'
 
-            elif self.valor not isinstance(lista_arbol):
+            elif not isinstance(lista_arbol, self.valor):
 
                 return 'Nodo no encontrado'
 
-    def insertar(self, nodo, nuevo_valor):
-    
-        if nodo not isinstance(Nodo):
+    def insertar(self, nuevo_valor):
 
-            raise ValueError(f"{nodo} no es un nodo")
-    
-        elif self.raiz is None:
+        self.lista_arbol_binario.append(nuevo_valor)
+
+        if self.raiz is None:
 
             self.raiz = Nodo(nuevo_valor)
     
         elif nuevo_valor > self.raiz:
             
-            if nodo.hijo_dch is None:
-                nodo.hijo_dch = Nodo(nuevo_valor)
+            if self.raiz.hijo_dch is None:
+                self.raiz.hijo_dch = Nodo(nuevo_valor)
             else:
-                self.insertar(nodo.hijo_dch, nuevo_valor)
+                self.insertar(self.raiz.hijo_dch.hijo_dch, nuevo_valor)
 
         elif nuevo_valor < self.raiz:
             
             if nodo.hijo_izq is None:
                 nodo.hijo_izq = Nodo(nuevo_valor)
             else:
-                self.insertar(nodo.hijo_izq, nuevo_valor)
+                self.insertar(self.hijo_izq.hijo_izq, nuevo_valor)
 
-    def coste_ultima_busqueda(self, self.lista_arbol_binario):
+    def coste_ultima_busqueda(self, lista):
   
         contador = 0
         for i in lista:
 
-            if isinstance(i, list):
+            if isinstance(i, lista):
 
                 for p in i:
 
@@ -93,3 +91,14 @@ class Arbol_binario (self):
 
     def mostrar_arbol(self):
         pass
+
+
+
+valores = [66, 34, 79, 26, 83, 39, 32, 60, 22, 74, 37, 80, 82, 50, 73, 31, 44, 33, 51]
+
+contador = 0
+for i in valores:
+    i = Nodo(i)
+    i = Arbol_binario(i)
+
+   
